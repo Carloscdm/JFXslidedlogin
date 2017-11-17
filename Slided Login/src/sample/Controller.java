@@ -26,7 +26,7 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        pane1.setStyle("-fx-background-image: url(\"/sample/1.jpg\")");
+        pane1.setStyle("-fx-background-image: url(\"/sample/6.jpg\")");
         pane2.setStyle("-fx-background-image: url(\"/sample/2.jpg\")");
         pane3.setStyle("-fx-background-image: url(\"/sample/3.jpg\")");
         pane4.setStyle("-fx-background-image: url(\"/sample/4.jpg\")");
