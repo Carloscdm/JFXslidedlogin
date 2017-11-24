@@ -3,13 +3,25 @@ package sample;
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import fxwindow.fxmove.FXMove;
+
+	/**
+	 * 
+	 * @author 21651713
+	 *
+	 */
+
+
 public class Controller implements Initializable {
+	 @FXML private AnchorPane root;
 
     @FXML
     private Pane pane1;
@@ -23,6 +35,24 @@ public class Controller implements Initializable {
     @FXML
     private Pane pane4;
     
+    /**
+     * Se crea FXMove para poder desplazar la ventana
+     * Acompañado de sus propiedades con eventos para que funcione correctamente
+     * OnMouseDragged y OnMousePressed
+     */
+    
+    private FXMove fxmove;
+    
+    @FXML
+    void OnMouseDragged(MouseEvent event) {
+    	fxmove.moveDragged(event);
+    }
+
+    @FXML
+    void OnMousePressed(MouseEvent event) {
+    	fxmove.movePressed(event);
+    }
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -30,7 +60,8 @@ public class Controller implements Initializable {
         pane2.setStyle("-fx-background-image: url(\"/sample/2.jpg\")");
         pane3.setStyle("-fx-background-image: url(\"/sample/3.jpg\")");
         pane4.setStyle("-fx-background-image: url(\"/sample/4.jpg\")");
-
+        
+        fxmove = new FXMove(root);
 
         backgroundAnimation();
 

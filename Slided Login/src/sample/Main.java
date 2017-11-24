@@ -1,5 +1,6 @@
 package sample;
 
+import sample.Controller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,6 +10,12 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+	/**
+	 * @author 21651713
+	 * @version 1.1
+	 * @see Controller
+	 */
+	
     @Override
     public void start(Stage primaryStage) throws Exception{
 
